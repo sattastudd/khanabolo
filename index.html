@@ -26,17 +26,13 @@
 .fontsize{
   font-size: 25px;
 }
-.circle{
-    border-radius 10px;
-    -moz-border-radius 10px;
-    -webkit-border-radius 10px; width: 20px; height: 20px; background: red; border: solid black 1px;
-}
 .mouseover{
   cursor: pointer;
 }
 i:hover{
-  color: blue;
+  color: red;
 }
+
 </style>
 
 <body ng-controller="foodController" bgcolor="#150000">
@@ -61,8 +57,8 @@ i:hover{
         </div>
         <div class="tpad">
           <h3 class="fontsize">
-            <font  ng-click="fbPage()" class="rpad30 mouseover" color="white"><i>facebook</i></font>
-            <font class="rpad30 mouseover" color="white"><i ng-click="twitterPage()">twitter</i></font>
+            <font ng-click="fbPage()" class="rpad30 mouseover" color="white"><i>facebook</i></font>
+            <font ng-click="twitterPage()" class="rpad30 mouseover" color="white"><i ng-click="twitterPage()">twitter</i></font>
           </h3>
         </div>
       </div>
