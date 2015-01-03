@@ -77,9 +77,15 @@ i:hover{
         <div>
           <h3 class="fontsize lpa25 tpad">
             <font ng-click="fbPage()" class="rpad30 mouseover" color="white"><i>facebook</i></font>
-            <font ng-click="twitterPage()" class="rpad30 mouseover" color="white"><i ng-click="twitterPage()">twitter</i></font>
+            <font ng-click="twitterPage()" class="rpad30 mouseover" color="white"><i>twitter</i></font>
           </h3>
         </div>
+        <div class="tpad">
+          <input type="text" placeholder="Enter your email" ng-model="email"/>
+          <button type="button" ng-click="enterEmail()">Notify Me</button>
+        </div>
+        <h4><font color="white" ng-if="gotYou">{{satishMail}}</h4>
+        <h4><font color="white" ng-if="gotYou">{{aditiMail}}</h4>
       </div>
       
   

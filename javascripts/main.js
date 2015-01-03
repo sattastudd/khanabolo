@@ -11,6 +11,23 @@ angular.module('foodApp').controller('foodController', function($scope, $interva
 		window.open("https://twitter.com/Sattastudd");
 	}
 
+	var userMailIds = [];
+
+	$scope.enterEmail = function(){
+		//userMailIds.push({"mail": $scope.email});
+		console.log(userMailIds.object);
+		if($scope.email === "sattasaphire@gmail.com"){
+			$scope.gotYou = true;
+			$scope.satishMail = "hey there Rascal";
+			console.log("inside got you"+$scope.gotYou);
+		}
+		if($scope.email === 'aditim067@gmail.com'){
+			$scope.gotYou = true;
+			$scope.aditiMail = "Love u babu";
+		}
+		//console.log(userMailIds);
+	}
+
 	//console.log(ddToday);
 
 	$interval(showLeftTime, 1000);
@@ -37,13 +54,13 @@ angular.module('foodApp').controller('foodController', function($scope, $interva
 
 		$scope.daysLeft = targetDays - totalDaysOver;
 		$scope.hoursLeft = 24 - hhToday;
-		console.log(minToday);
+		//console.log(minToday);
 		$scope.minutesLeft = 60 - minToday;
 		$scope.secondsLeft = 60 - secToday;
 	
 		if($scope.secondsLeft < 10){
 			$scope.showZeroSeconds = true;
-			console.log($scope.showZeroSeconds);
+			//console.log($scope.showZeroSeconds);
 		}
 		else if($scope.secondsLeft > 10){
 			$scope.showZeroSeconds = false;
