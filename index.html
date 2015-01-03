@@ -22,14 +22,26 @@
 .tpad{
   padding-top: 5px;
 }
-.fontsize{
+.fontsize25{
   font-size: 25px;
+}
+.fontsize50{
+  font-size: 50px;
+}
+.fontsize{
+  font-size: 20px;
 }
 .mouseover{
   cursor: pointer;
 }
 i:hover{
   color: red;
+}
+.lpa25{
+  padding-left: 25px;
+}
+.rpad10{
+  padding-right: 10px;
 }
 
 </style>
@@ -54,11 +66,23 @@ i:hover{
             <font color="white">In the mean time stalk us here</font>
           </h3>
         </div>
-        <div class="tpad">
-          <h3 class="fontsize">
+        <div>
+          <h3 class="fontsize lpa25">
             <font ng-click="fbPage()" class="rpad30 mouseover" color="white"><i>facebook</i></font>
             <font ng-click="twitterPage()" class="rpad30 mouseover" color="white"><i ng-click="twitterPage()">twitter</i></font>
           </h3>
+          <h1 class="fontsize50 rpad10">
+            <font class="rpad30" color="white"><font ng-show="showZeroDays" color="white">0</font>{{daysLeft}}</font>
+            <font class="rpad30" color="white"><font ng-show="showZeroHours" color="white">0</font>{{hoursLeft}}</font>
+            <font class="rpad30" color="white"><font ng-show="showZeroMinues" color="white">0</font>{{minutesLeft}}</font>
+            <font color="white"><font ng-show="showZeroSeconds" color="white">0</font>{{secondsLeft}}</font>
+          </h1>
+          <h1 class="fontsize rpad10">
+            <font class="rpad30" color="white">days</font>
+            <font class="rpad30" color="white">hours</font>
+            <font class="rpad30" color="white">minutes</font>
+            <font color="white">seconds</font>
+          </h1>
         </div>
       </div>
       
