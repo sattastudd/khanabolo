@@ -11,25 +11,31 @@ angular.module('foodApp').controller('foodController', function($scope, $interva
 		window.open("https://twitter.com/Sattastudd");
 	}
 
-	var userMailIds = [];
-
 	$scope.enterEmail = function(){
-		//userMailIds.push({"mail": $scope.email});
-		console.log(userMailIds.object);
-		if($scope.email === "sattasaphire@gmail.com"){
+		 var email = angular.lowercase($scope.email);
+		//console.log(email);
+		if(email === "sattasaphire@gmail.com"){
 			$scope.gotYou = true;
 			$scope.satishMail = "hey there Rascal";
 			console.log("inside got you"+$scope.gotYou);
-		}
-		if($scope.email === 'aditim067@gmail.com'){
+		}else
+		if(email === 'aditim067@gmail.com'){
 			$scope.gotYou = true;
 			$scope.aditiMail = "Love u babu";
-		}
-		if($scope.email === 'ss77mehta@gmail.com'){
+		}else
+		if(email === 'ss77mehta@gmail.com'){
 			$scope.gotYou = true;
 			$scope.safalMail = "hey there Safal";
-		}
+		}else
+		if(email === "bharat.sapaha@vossloh-cogifer.com"||email === "bkmvbcl@gmail.com"){
+			$scope.gotYou = true;
+			$scope.daddyMail = "hey there dad";
 		//console.log(userMailIds);
+		}else{
+			$scope.didntGetYou = true;
+			$scope.gotYou = false;
+			$scope.wrongMail = "oops this feature is not activated yet";
+		}
 	}
 
 	//console.log(ddToday);
