@@ -25,6 +25,10 @@ angular.module('foodApp').controller('foodController', function($scope, $interva
 			$scope.gotYou = true;
 			$scope.aditiMail = "Love u babu";
 		}
+		if($scope.email === 'ss77mehta@gmail.com'){
+			$scope.gotYou = true;
+			$scope.safalMail = "hey there Safal";
+		}
 		//console.log(userMailIds);
 	}
 
