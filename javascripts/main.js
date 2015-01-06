@@ -62,7 +62,7 @@ angular.module('foodApp').controller('foodController', function($scope, $interva
 			totalDaysOver = 59+ddToday;
 		}
 
-		$scope.daysLeft = targetDays - totalDaysOver;
+		$scope.daysLeft = targetDays - totalDaysOver -1;
 		$scope.hoursLeft = 24 - hhToday -1;
 		//console.log(minToday);
 		$scope.minutesLeft = 60 - minToday -1;
