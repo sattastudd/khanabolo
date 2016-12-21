@@ -1,0 +1,38 @@
+pronoun = [{word: 'I am', rule: ['stop','verb','adverb','adjective','noun','preposition']},
+	   {word: 'I was', rule: ['blank','adverb','verb','adjective','noun','preposition']}];
+
+adverb = [{word: 'slowly', rule: ['stop','verb','preposition','pronoun']},
+	  {word: 'quickly', rule: ['stop','verb','preposition','pronoun']}];
+
+verb = [{word: 'run', rule: ['stop','adverb','preposition','pronoun','adjective','noun']},
+	{word: 'kick', rule: ['stop','adverb','preposition','pronoun','adjective','noun']}];
+
+adjective = [{word: 'awesome', rule: ['stop','verb','preposition','pronoun','noun']},
+	     {word: 'good', rule: ['stop','verb','preposition','pronoun','noun']}];
+
+preposition = [{word: 'to', rule: ['blank','verb','adverb','pronoun','noun','adjective']}
+	       {word: 'under', rule: ['blank','verb','adverb','pronoun','noun','adjective']}];
+
+Noun = [{word: 'bat', rule: ['stop','verb','adverb','pronoun','preposition','adjective']},
+	{word: 'ball', rule: ['stop','verb','adverb','pronoun','preposition','adjective']}];
+
+
+for (i = 0; i < pronoun.length; i++) { 
+
+    firstWord = pronoun[i].word
+
+    firstWrdRule = pronoun[i].rule
+
+    for(j = 0; j < firstWrdRule.length; j++){
+
+	ruleArryWord = firstWrdRule[j]
+
+	if('stop' === ruleArryWord){
+		console.log(firstWord);
+	}
+
+
+
+    }
+
+}
