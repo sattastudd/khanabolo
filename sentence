@@ -1,37 +1,211 @@
-pronoun = [{word: 'I am', rule: ['stop','verb','adverb','adjective','noun','preposition']},
+var pronoun = [{word: 'I am', rule: ['stop','verb','adverb','adjective','noun','preposition']},
 	   {word: 'I was', rule: ['blank','adverb','verb','adjective','noun','preposition']}];
 
-adverb = [{word: 'slowly', rule: ['stop','verb','preposition','pronoun']},
+var adverb = [{word: 'slowly', rule: ['stop','verb','preposition','pronoun']},
 	  {word: 'quickly', rule: ['stop','verb','preposition','pronoun']}];
 
-verb = [{word: 'run', rule: ['stop','adverb','preposition','pronoun','adjective','noun']},
+var verb = [{word: 'run', rule: ['stop','adverb','preposition','pronoun','adjective','noun']},
 	{word: 'kick', rule: ['stop','adverb','preposition','pronoun','adjective','noun']}];
 
-adjective = [{word: 'awesome', rule: ['stop','verb','preposition','pronoun','noun']},
+var adjective = [{word: 'awesome', rule: ['stop','verb','preposition','pronoun','noun']},
 	     {word: 'good', rule: ['stop','verb','preposition','pronoun','noun']}];
 
-preposition = [{word: 'to', rule: ['blank','verb','adverb','pronoun','noun','adjective']}
+var preposition = [{word: 'to', rule: ['blank','verb','adverb','pronoun','noun','adjective']},
 	       {word: 'under', rule: ['blank','verb','adverb','pronoun','noun','adjective']}];
 
-Noun = [{word: 'bat', rule: ['stop','verb','adverb','pronoun','preposition','adjective']},
+var noun = [{word: 'bat', rule: ['stop','verb','adverb','pronoun','preposition','adjective']},
 	{word: 'ball', rule: ['stop','verb','adverb','pronoun','preposition','adjective']}];
 
 
 for (i = 0; i < pronoun.length; i++) { 
 
-    firstWord = pronoun[i].word
+    var firstWord = pronoun[i].word
 
-    firstWrdRule = pronoun[i].rule
+    var firstWrdRule = pronoun[i].rule
 
     for(j = 0; j < firstWrdRule.length; j++){
 
-	ruleArryWord = firstWrdRule[j]
+	var ruleArryFirstWord = firstWrdRule[j]
 
-	if('stop' === ruleArryWord){
+	var firstCategory = null;
+
+	if('stop' === ruleArryFirstWord){
 		console.log(firstWord);
+		//$scope.query.push(firstWord);
+		continue;
+	}else if ('blank' === ruleArryFirstWord){
+		continue;
+	}
+	
+	if ('pronoun' === ruleArryFirstWord){
+		firstCategory = null;
+		firstCategory = pronoun;
+		//console.log('inside pronoun');
+	}else if ('adverb' === ruleArryFirstWord){
+		firstCategory = null;
+		firstCategory = adverb;
+		//console.log('inside adverb');
+	}else if ('verb' === ruleArryFirstWord){
+		firstCategory = null;
+		firstCategory = verb;
+	}else if ('adjective' === ruleArryFirstWord){
+		firstCategory = null;
+		firstCategory = adjective;
+	}else if ('preposition' === ruleArryFirstWord){
+		firstCategory = null;
+		firstCategory = preposition;
+	}else if ('noun' === ruleArryFirstWord){
+		//console.log('inside noun');
+		firstCategory = null;
+		firstCategory = noun;
 	}
 
+	for(var k=0; k < firstCategory.length; k++){
+		var secondWord = firstCategory[k].word
+		var secondWrdRule = firstCategory[k].rule
 
+		for(l = 0; l < secondWrdRule.length; l++){
+
+			var ruleArrySecondWord = secondWrdRule[l]
+
+			var secondCategory = null;
+
+			if('stop' === ruleArrySecondWord){
+
+				console.log(firstWord + ' ' + secondWord);
+				//$scope.query.push(firstWord + ' ' + secondWord)
+				continue;
+
+				/* if(null != pronoun.indexOf(firstWord) && null != adverb.indexOf(secondWord)){
+					continue;
+				}else{
+					console.log(firstWord + ' ' + secondWord);
+					//$scope.query.push(firstWord + ' ' + secondWord)
+					continue;
+				} */
+			}else if ('blank' === ruleArrySecondWord){
+				continue;
+			}
+
+			if ('pronoun' === ruleArrySecondWord){
+				secondCategory = null;
+				secondCategory = pronoun;
+			}else if ('adverb' === ruleArrySecondWord){
+				secondCategory = null;
+				secondCategory = adverb;
+			}else if ('verb' === ruleArrySecondWord){
+				secondCategory = null;
+				secondCategory = verb;
+			}else if ('adjective' === ruleArrySecondWord){
+				secondCategory = null;
+				secondCategory = adjective;
+			}else if ('preposition' === ruleArrySecondWord){
+				secondCategory = null;
+				secondCategory = preposition;
+			}else if ('noun' === ruleArrySecondWord){
+				secondCategory = null;
+				secondCategory = noun;
+			}
+
+			 for(var m=0; m < secondCategory.length; m++){
+				var thirdWord = secondCategory[m].word
+				var thirdWrdRule = secondCategory[m].rule
+
+				for(n = 0; n < thirdWrdRule.length; n++){
+
+					var ruleArryThirdWord = thirdWrdRule[n]
+
+					var thirdCategory = null;
+
+					if('stop' === ruleArryThirdWord){
+						console.log(firstWord +' '+ secondWord + ' ' + thirdWord);
+						//$scope.query(firstWord +' '+ secondWord + ' ' + thirdWord);
+						continue;
+						/* if(null != pronoun.indexOf(secondWord) && null != adverb.indexOf(thirdWord)){
+							continue;
+						}else{
+							console.log(firstWord +' '+ secondWord + ' ' + thirdWord);
+							//$scope.query(firstWord +' '+ secondWord + ' ' + thirdWord);
+							continue;
+						} */
+					}else if ('blank' === ruleArryThirdWord){
+						continue;
+					}
+
+					if ('pronoun' === ruleArryThirdWord){
+						thirdCategory = null;
+						thirdCategory = pronoun;
+					}else if ('adverb' === ruleArryThirdWord){
+						thirdCategory = null;
+						thirdCategory = adverb;
+					}else if ('verb' === ruleArryThirdWord){
+						thirdCategory = null;
+						thirdCategory = verb;
+					}else if ('adjective' === ruleArryThirdWord){
+						thirdCategory = null;
+						thirdCategory = adjective;
+					}else if ('preposition' === ruleArryThirdWord){
+						thirdCategory = null;
+						thirdCategory = preposition;
+					}else if ('noun' === ruleArryThirdWord){
+						thirdCategory = null;
+						thirdCategory = noun;
+					}
+
+					for(var o=0; o < thirdCategory.length; o++){
+						var fourthWord = thirdCategory[o].word
+						var fourthWrdRule = thirdCategory[o].rule
+
+						for(p = 0; p < thirdWrdRule.length; p++){
+
+							var ruleArryFourthWord = fourthWrdRule[p]
+
+							var fourthCategory = null;
+
+							if('stop' === ruleArryFourthWord){
+								console.log(firstWord +' '+ secondWord + ' ' + thirdWord + ' ' + fourthWord);
+								//$scope.query(firstWord +' '+ secondWord + ' ' + thirdWord + ' ' + fourthWord);
+								continue;
+								/* if(null != pronoun.indexOf(thirdWord) && null != adverb.indexOf(fourthWord)){
+									continue;
+								}else{
+									console.log(firstWord +' '+ secondWord + ' ' + thirdWord + ' ' + fourthWord);
+									//$scope.query(firstWord +' '+ secondWord + ' ' + thirdWord + ' ' + fourthWord);
+									continue;
+								} */
+							}else if ('blank' === ruleArryFourthWord){
+								continue;
+							}
+
+							if ('pronoun' === ruleArryFourthWord){
+								thirdCategory = null;
+								thirdCategory = pronoun;
+							}else if ('adverb' === ruleArryFourthWord){
+								thirdCategory = null;
+								thirdCategory = adverb;
+							}else if ('verb' === ruleArryFourthWord){
+								thirdCategory = null;
+								thirdCategory = verb;
+							}else if ('adjective' === ruleArryFourthWord){
+								thirdCategory = null;
+								thirdCategory = adjective;
+							}else if ('preposition' === ruleArryFourthWord){
+								thirdCategory = null;
+								thirdCategory = preposition;
+							}else if ('noun' === ruleArryFourthWord){
+								thirdCategory = null;
+								thirdCategory = noun;
+							}
+
+							
+						}
+					}
+				}
+			} 
+
+
+		}
+	}
 
     }
 
